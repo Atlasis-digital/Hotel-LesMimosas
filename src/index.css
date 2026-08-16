@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-sand-900 text-gold-muted font-sans font-light antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-serif text-white;
+  }
+}
+
+@layer components {
+  .container {
+    @apply mx-auto w-full max-w-7xl;
+  }
+  .section-heading {
+    @apply font-serif font-light tracking-wide;
+  }
+  .gold-accent-line {
+    @apply h-px w-16 bg-gradient-to-r from-transparent via-gold to-transparent;
+  }
+  .btn-gold {
+    @apply inline-flex items-center justify-center px-6 py-3 bg-gold text-sand-900 font-medium rounded-lg transition-colors hover:bg-gold-light;
+  }
+  .card {
+    @apply bg-sand-800 rounded-xl border border-gold/10;
+  }
+  /* fade-in-up trigger (JS adds .animate when in view) */
+  .fade-in-up {
+    @apply opacity-0;
+  }
+  .fade-in-up.animate {
+    @apply animate-fade-in-up;
+  }
+}
+
+/* Movie-credits review marquee: pause on hover */
+.marquee-track:hover {
+  animation-play-state: paused;
+}
